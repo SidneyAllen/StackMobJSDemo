@@ -40,6 +40,7 @@ StackMob.init({
 <ul>
 	<li><a href="javascript:void('login');" id="login">Login Chuck Norris</a></li>
 	<li><a href="javascript:void('logout');" id="logout">Logout Chuck Norris</a></li>
+	<li><a href="javascript:void('who');" id="who">Who's logged in?</a></li>
 </ul>
 
 <h2>Custom Code</h2>
@@ -139,6 +140,10 @@ $('#login').click(function(e) {
 $('#logout').click(function(e) {
 	var user = new StackMob.User({ username: 'chucknorris', password: 'myfists' });
 	user.logout(StackMobExamples.debug('Logging out'));
+});
+
+$('#who').click(function(e) {
+	$('#results').text(StackMob.getLoggedInUser());
 });
 
 $('#cc').click(function(e) {
