@@ -42,6 +42,19 @@ StackMob.init({
 	<li><a href="#" id="readexpanded">Read Expanded Chuck Norris with Weapons</a></li>
 </ul>
 
+<h2>Authentication</h2>
+
+<ul>
+	<li><a href="#" id="login">Login Chuck Norris</a></li>
+	<li><a href="#" id="logout">Logout Chuck Norris</a></li>
+</ul>
+
+<h2>Custom Code</h2>
+
+<ul>
+	<li><a href="#" id="cc">Call custom server code</a></li>
+</ul>
+
 <h2>Send Email with SendGrid - Modules</h2>
 
 <ul>
@@ -127,6 +140,22 @@ $('#readexpanded').click(function(e) {
 	user.fetchExpanded(1, StackMobExamples.debug('Fetching expanded user'));
 });
 
+$('#login').click(function(e) {
+	var user = new StackMob.User({ username: 'chucknorris', password: 'myfists' });
+	user.login(true, StackMobExamples.debug('Logging in'));
+});
+
+$('#logout').click(function(e) {
+	var user = new StackMob.User({ username: 'chucknorris', password: 'myfists' });
+	user.logout(StackMobExamples.debug('Logging out'));
+});
+
+$('#cc').click(function(e) {
+	StackMob.customcode('hello_world'), {}, 'POST', StackMobExamples.debug('Calling custom server code'));
+});
+
+
+
 $('#sendemail').click(function(e) {
 	StackMob.customcode('sendgrid/email', { 
 	    subject: 'Dark Knight Rising', 
@@ -134,15 +163,7 @@ $('#sendemail').click(function(e) {
 	    text: 'Welcome to the Bat App', 
 	    emails: ['ericktai@yahoo.com'] 
 	    }, 
-	    'POST', 
-	    { 
-	    success: function(result) { 
-	        console.debug(result); 
-	    }, 
-	    error: function(error) { 
-	        console.log(error); 
-	    }
-	});
+	    'POST', StackMobExamples.debug('Sending an email'));
 });
 
 </script>
