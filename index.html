@@ -154,9 +154,9 @@ $('#cc').click(function(e) {
 
 $('#sendemail').click(function(e) {
 	StackMob.customcode('sendgrid/email', { 
-	    subject: 'Dark Knight Rising', 
-	    from: 'bruce@batman.com', 
-	    text: 'Welcome to the Bat App', 
+	    subject: 'Hi from StackMob!', 
+	    from: 'info@stackmob.com', 
+	    text: "We're trying out the SendGrid email module on StackMob.  Just click to install the module and start sending emails via a simple API call immediately.  See more at <a href=\"https://www.stackmob.com\">https://www.stackmob.com</a>", 
 	    emails: [$('#emailto').val()] 
 	    }, 
 	    'POST', StackMobExamples.debug('Sending an email'));
