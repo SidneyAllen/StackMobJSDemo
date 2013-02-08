@@ -2,11 +2,8 @@
 <html>
 <head>
 <link rel="stylesheet" href="demo.css" type="text/css"/>
-
-
 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
 <script type="text/javascript" src="http://static.stackmob.com/js/stackmob-js-0.7.0-bundled-min.js"></script>
-
   
 <script type="text/javascript">
 StackMob.init({
@@ -19,7 +16,6 @@ StackMob.init({
  
 </head>
 <body>
-
 <h2>CRUD</h2>
 <ul>
 	<li><a href="javascript:void('createuser');" id="createuser">Create User</a></li>
@@ -27,8 +23,6 @@ StackMob.init({
 	<li><a href="javascript:void('edituser');" id="edituser">Edit User</a></li>
 	<li><a href="javascript:void('deleteuser');" id="deleteuser">Delete User</a></li>
 </ul>
-
-
 
 <h2>Custom Object</h2>
 <ul>
@@ -43,20 +37,17 @@ StackMob.init({
 </ul>
 
 <h2>Authentication</h2>
-
 <ul>
 	<li><a href="javascript:void('login');" id="login">Login Chuck Norris</a></li>
 	<li><a href="javascript:void('logout');" id="logout">Logout Chuck Norris</a></li>
 </ul>
 
 <h2>Custom Code</h2>
-
 <ul>
 	<li><a href="javascript:void('cc');" id="cc">Call custom server code</a></li>
 </ul>
 
 <h2>Send Email with SendGrid - Modules</h2>
-
 <ul>
 	<li><a href="javascript:void('sendemail');" id="sendemail">Send an email to Chuck Norris</a></li>
 </ul>
@@ -93,14 +84,14 @@ var Weapon = StackMob.Model.extend({ schemaName: 'weapon' });
 $('#addweapons').click(function(e) {
 	//Create an Object and Schema in one call
 	var gun = new Weapon({
-		name: 'NunChucks',
-		hitpoints: 50, //integer
-		cost: 150.50, //float
-		visible: true, //boolean
-		settings: ['ouch','super ouch','mega ouch'], //array of strings
-		upgradelevels: [1,2,3], //array of integers
-		upgradecosts: [50.50,100.50,250.50], //array of floats
-		enabled: [true, false, true]	//array of booleans
+		name: 		'NunChucks',
+		hitpoints: 	50, 					//integer
+		cost: 		150.50, 				//float
+		visible: 	true, 					//boolean
+		settings: 	['ouch','super ouch','mega ouch'], 	//array of strings
+		upgradelevels: 	[1, 2, 3], 				//array of integers
+		upgradecosts: 	[50.50, 100.50, 250.50], 		//array of floats
+		enabled: 	[true, false, true]			//array of booleans
 	});
 	gun.create(StackMobExamples.debug('Creating Weapon object with different types of fields'));
 });
@@ -108,25 +99,25 @@ $('#addweapons').click(function(e) {
 $('#addmoreweapons').click(function(e) {
 	var weapons = [
 		new Weapon({
-			name: 'Fists of Fury',
-			hitpoints: 5, //integer
-			cost: 0.5, //float
-			visible: true, //boolean
-			settings: ['ouch','super ouch','mega ouch'], //array of strings
-			upgradelevels: [1,2,3], //array of integers
-			upgradecosts: [5.50,10.05,25.05], //array of floats
-			enabled: [true, false, true]	//array of booleans
+			name: 		'Fists of Fury',
+			hitpoints: 	5, 					//integer
+			cost: 		0.5, 					//float
+			visible: 	true, 					//boolean
+			settings: 	['ouch','super ouch','mega ouch'], 	//array of strings
+			upgradelevels: 	[1,2,3], 				//array of integers
+			upgradecosts: 	[5.50,10.05,25.05], 			//array of floats
+			enabled: 	[true, false, true]			//array of booleans
 		}),
 		
 		new Weapon({
-			name: 'Beard of Death',
-			hitpoints: 5000, //integer
-			cost: 2235.75, //float
-			visible: true, //boolean
-			settings: ['ouch','super ouch','mega ouch'], //array of strings
-			upgradelevels: [1,2,3], //array of integers
-			upgradecosts: [150.50,1000.50,5250.50], //array of floats
-			enabled: [true, false, true]	//array of booleans
+			name: 		'Beard of Death',
+			hitpoints: 	5000, 					//integer
+			cost: 		2235.75, 				//float
+			visible: 	true, 					//boolean
+			settings: 	['ouch','super ouch','mega ouch'], 	//array of strings
+			upgradelevels: 	[1,2,3], 				//array of integers
+			upgradecosts: 	[150.50,1000.50,5250.50], 		//array of floats
+			enabled: 	[true, false, true]			//array of booleans
 		})
 	];
 	
