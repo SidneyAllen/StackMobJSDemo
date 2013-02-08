@@ -50,7 +50,7 @@ StackMob.init({
 
 <h2>Send Email with SendGrid - Modules</h2>
 <ul>
-	<li><a href="javascript:void('sendemail');" id="sendemail">Send an email to Chuck Norris</a></li>
+	<li><a href="javascript:void('sendemail');" id="sendemail">Send an email to: </a> <input type="text" id="emailto" value="" placeholder="you@yourdomain.com"/></li>
 </ul>
 
 <script type="text/javascript">
@@ -157,7 +157,7 @@ $('#sendemail').click(function(e) {
 	    subject: 'Dark Knight Rising', 
 	    from: 'bruce@batman.com', 
 	    text: 'Welcome to the Bat App', 
-	    emails: ['ericktai@yahoo.com'] 
+	    emails: [$('#emailto').val()] 
 	    }, 
 	    'POST', StackMobExamples.debug('Sending an email'));
 });
